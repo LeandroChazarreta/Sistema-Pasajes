@@ -1,0 +1,9 @@
+Options All -Indexes
+
+#Habilita las reglas de escritura del servidor
+RewriteEngine On
+
+#Url amigable
+RewriteRule ^([a-zA-Z0-9/]+)$ index.php?views=$1
+
+
