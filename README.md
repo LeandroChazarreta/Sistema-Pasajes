@@ -9,4 +9,4 @@ Estos son los integrantes del **Grupo 5**
 
 # Versiones 
 
-- `v1.1`
+- `v1.1` : Es la primer version.
