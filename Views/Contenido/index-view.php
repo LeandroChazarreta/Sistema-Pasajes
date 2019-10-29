@@ -11,27 +11,28 @@
         }
     });
 })
-
 </script>
 
 
-<?php
-if(isset($_SESSION))
+<!-- <?php
+//if(isset($_SESSION))
 {
-    session_destroy();
+  //  session_destroy();
 }
-?>
+
+?> -->
 
     <body>
-    <?php include_once "Views/Modulos/Navbar1-view.php"; ?>
-
-    <!-- Slider -->
-    <?php 
-        /* SLIDER COMENTADO 26/10
-        
-        include_once "Views/Modulos/Slider-view.php";
+    <?php
+    session_start();
+    if(isset($_SESSION['sesion_id'])){
+      include_once "Views/Modulos/Navbar-view.php";       
+    }else{
+      include_once "Views/Modulos/Navbar1-view.php";       
+    }
     
-        */ ?>
+    ?>
+
 
     <div class="container">
   <!-- Contenido -->
