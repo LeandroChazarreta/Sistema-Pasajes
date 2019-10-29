@@ -2,7 +2,13 @@
     require_once "../Models/conexion.php";
 
 	$origen = $_POST['origen'];
-    $destino = $_POST['destino'];
+    if(isset($_POST['destino'])){
+        $destino = $_POST['destino'];        
+    }else{
+        $destino='';
+    }
+
+
     $fechaIda = $_POST['fechaIda'];
     $tipoVuelo = $_POST['vuelo'];
 
