@@ -14,8 +14,6 @@
     <div class="container">
   <!-- Contenido -->
      <?php
-            echo "<p>$instruccion</p>";
-            echo "<p>$tipoVuelo</p>";
             echo"
             <table class='table table-bordered table-dark'>
             <thead>
@@ -32,6 +30,7 @@
                         <td>" . $vuelo['fecha_viaje'] . "</td>
                         <td>" . $vuelo['duracion'] . "</td>
                         <td>".  "$" . $vuelo['costo_vuelo'] . "</td>
+                        <td><a href='reserva' </td>
                      </tr>";
               }
                echo "</tbody>";
