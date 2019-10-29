@@ -24,14 +24,6 @@
                 <h2 style="margin:0px;"><span class="smallnav menu" onclick="openNav()">☰ GauchoRocket</span></h2>
                 <h1 style="margin:0px;"><span class="largenav"><a href="./index" class="Ecommerce"> GauchoRocket </a></span></h1>
             </div>
-            <div class="flipkart-navbar-search smallsearch col-sm-8 col-xs-11">
-                <div class="row">
-                    <input class="flipkart-navbar-input col-xs-13" type="" placeholder="  Buscar productos, pasajes, y más" name="">
-                    <button class="flipkart-navbar-button col-xs-1">
-                        <i class="material-icons">search</i>  </button>
-                </div>
-            </div>
-
             <div id="mySidenav" class="sidenav">
                 <div class="container" style="background-color: #000000; padding-top: 10px;">
                     <span class="sidenav-heading">Home</span>

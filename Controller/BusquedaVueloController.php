@@ -64,9 +64,13 @@
             $vuelo['costo_vuelo'] =	$row["costo_vuelo"];
             $vuelo['fecha_viaje'] = $row["fecha_viaje"];
             $vuelo['duracion']	  = $row["duracion"];
+            $vuelo['id_vuelo']    = $row["id_vuelo"];
+            $vuelo['imagen']    = $row["imagen"];
             $vuelos[] = $vuelo;
             }
     }
+    session_start();
+    $_SESSION['vuelos']=$vuelos;
 
-    require_once ("../Views/Contenido/busqueda-vuelo-view.php");
+    header("location: ../busqueda");
 ?>
