@@ -1,53 +1,47 @@
-<?php include_once "Views/Modulos/Navbar1-view.php"; ?>
+<?php 
+include_once "Views/Modulos/Navbar1-view.php";
+ ?>
+<div class="row">
+  <div class="col-md-12">
     <div class="row">
-        <div class="col-md-12">
+      <div class="col-md-6 mx-auto">
+        <div class="cdiard rounded-0">
+          <div class="card-header">
+            <h3 class="mb-0">Registro</h3>
+          </div>            
+          <form class="formulario" novalidate method="post" data-toggle="validator" action="Controller/RegistroController.php">
+            <div class="form-row">
+              <label for="nom_usuario">Usuario:
+              </label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="validationTooltipUsernamePrepend">@
+                  </span>
+                </div>
+                <input class="form-control" type="text" name="nom_usuario" id="nom_usuario" placeholder="Ingrese nombre de usuario" required>
+                <div class="invalid-tooltip">
+                  Ingrese un nombre de usuario valido y unico
+                </div>
+              </div>
+            </div>
             <div class="row">
-                <div class="col-md-6 mx-auto">
-                    <div class="cdiard rounded-0">
-                           <a href="login"><div class="float-md-right registrar">Ya tengo usuario</div><br> </a>
-
-                        <div class="card-header">
-                            <h3 class="mb-0">Registro</h3>
-                        </div>
-
-
-
-
-
-<form class="formulario" novalidate method="post" data-toggle="validator" action="Controller/RegistroController.php">
-  <div class="form-row">
-
-
-      <label for="nom_usuario">Usuario: </label>
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
-        </div>
-        <input class="form-control" type="text" name="nom_usuario" id="nom_usuario" placeholder="Ingrese nombre de usuario" required>
-        <div class="invalid-tooltip">
-            Ingrese un nombre de usuario valido y unico
-        </div></div>
-        </div>
-
-
-    <div class="row">
-    <div class="col">
-    <label for="pass">Contraseña</label>
-    <input class ="form-control" type="password" name="pass" id="pass" placeholder="Ingrese Contraseña">
-            <div class="invalid-tooltip">
-          Ingrese una contraseña con mas de 6 caracteres.
-        </div>
-    </div> 
-
-
-
-    <div class="col">
-     <label for="re_pass">Repetir Password</label>
-     <input class ="form-control" type="password" name="re_pass" id="re_pass" placeholder="Ingrese nuevamente la contraseña">
-             <div class="invalid-tooltip">
-          Las contraseñas no son iguales.
-        </div>
-     </div>   </div>  </div> 
+              <div class="col">
+                <label for="pass">Contraseña
+                </label>
+                <input class ="form-control" type="password" name="pass" id="pass" placeholder="Ingrese Contraseña">
+                <div class="invalid-tooltip">
+                  Ingrese una contraseña con mas de 6 caracteres.
+                </div>
+              </div> 
+              <div class="col">
+                <label for="re_pass">Repetir Password</label>
+                <input class ="form-control" type="password" name="re_pass" id="re_pass" placeholder="Ingrese nuevamente la contraseña">
+                <div class="invalid-tooltip">
+                  Las contraseñas no son iguales.
+                </div>
+              </div>   
+            </div>  
+        </div> 
 
 
      <div class="row">
