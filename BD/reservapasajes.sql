@@ -2,8 +2,8 @@
 -- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 27-10-2019 a las 15:06:05
+-- Servidor: localhost:3307
+-- Tiempo de generación: 01-11-2019 a las 19:26:04
 -- Versión del servidor: 10.4.6-MariaDB
 -- Versión de PHP: 7.3.8
 
@@ -64,7 +64,9 @@ CREATE TABLE `destino` (
 
 INSERT INTO `destino` (`id_destino`, `nombre_destino`, `nombre_hotel`, `costo_hotel`) VALUES
 (1, 'Luna', 'Luna Hotel', '2000.00'),
-(2, 'Marte', 'Marte Hotel', '2300.00');
+(2, 'Marte', 'Marte Hotel', '2300.00'),
+(3, 'EEI', 'EEI Hotel', '1500.00'),
+(4, 'Orbital Hotel', 'Orbital Hotel', '4900.00');
 
 -- --------------------------------------------------------
 
@@ -95,7 +97,10 @@ CREATE TABLE `origen` (
 
 INSERT INTO `origen` (`id_origen`, `nombre_origen`) VALUES
 (1, 'Buenos Aires'),
-(2, 'Ankara');
+(2, 'Ankara'),
+(3, 'EEI'),
+(4, 'Orbital Hotel'),
+(5, 'Luna');
 
 -- --------------------------------------------------------
 
@@ -132,19 +137,10 @@ CREATE TABLE `persona` (
 CREATE TABLE `reserva` (
   `id_reserva` int(11) NOT NULL,
   `fecha_reserva` date DEFAULT NULL,
-  `fecha_cancelada` date DEFAULT NULL,
-  `dni` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `reserva_vuelo`
---
-
-CREATE TABLE `reserva_vuelo` (
-  `id_reserva` int(11) NOT NULL,
-  `id_vuelo` int(11) NOT NULL
+  `dni` int(11) DEFAULT NULL,
+  `id_vuelo` int(11) DEFAULT NULL,
+  `servicio` varchar(30) DEFAULT NULL,
+  `cabina` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -205,8 +201,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nombre`, `apellido`, `calle`, `nro`, `provincia`, `localidad`, `password`, `nom_usuario`, `mail`, `admin`) VALUES
-(0, 'Andrea', 'Descous', 'Alsina', 155, 'Buenos Aires', '\n					Ramos MejÃ­a', 'bf1dc6c75957f677b47d09b40db611db', 'andreita', 'andrea@hotmail.com', 0),
-(0, 'Noelia', 'Herrera', 'Alsina', 155, 'Buenos Aires', '\n					Ramos MejÃ­a', '7bb7e35d425b5c04af107874393f7863', 'Noelia', 'noe@hotmail.com', 0);
+(1, 'Luis', 'Herrera', 'Alsina', 155, 'Buenos Aires', '\r\n					Ramos MejÃ­a', '85376a05516ccfbdda6e0968f8ad2a93', 'herreraluis.93', 'herreraluis.93@hotmail.c', 0);
 
 -- --------------------------------------------------------
 
@@ -222,16 +217,18 @@ CREATE TABLE `vuelo` (
   `descripcion` varchar(40) DEFAULT NULL,
   `id_destino` int(11) DEFAULT NULL,
   `id_origen` int(11) DEFAULT NULL,
-  `tipo_vuelo` varchar(30) DEFAULT NULL
+  `tipo_vuelo` varchar(30) DEFAULT NULL,
+  `imagen` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `vuelo`
 --
 
-INSERT INTO `vuelo` (`id_vuelo`, `duracion`, `fecha_viaje`, `costo_vuelo`, `descripcion`, `id_destino`, `id_origen`, `tipo_vuelo`) VALUES
-(1, '10', '2019-10-31', '5000', 'Vuelo entre destinos', 1, 1, 'entre-destino'),
-(2, '35', '2019-11-27', '27000', NULL, NULL, 1, 'tour');
+INSERT INTO `vuelo` (`id_vuelo`, `duracion`, `fecha_viaje`, `costo_vuelo`, `descripcion`, `id_destino`, `id_origen`, `tipo_vuelo`, `imagen`) VALUES
+(0, '4 hs', '2019-12-14', '3400', 'Entre Destino', 3, 1, 'entre-destino', 'img-entre1.jpg'),
+(1, '10 Dias', '2019-10-31', '5000', 'Vuelo entre destinos', 1, 1, 'entre-destino', 'img-entre.jpg'),
+(2, '35', '2019-11-27', '27000', NULL, NULL, 1, 'tour', 'img-tour.jpg');
 
 -- --------------------------------------------------------
 
@@ -296,13 +293,7 @@ ALTER TABLE `persona`
 --
 ALTER TABLE `reserva`
   ADD PRIMARY KEY (`id_reserva`),
-  ADD KEY `dni` (`dni`);
-
---
--- Indices de la tabla `reserva_vuelo`
---
-ALTER TABLE `reserva_vuelo`
-  ADD PRIMARY KEY (`id_reserva`,`id_vuelo`),
+  ADD KEY `dni` (`dni`),
   ADD KEY `id_vuelo` (`id_vuelo`);
 
 --
@@ -327,6 +318,12 @@ ALTER TABLE `tipo_de_vuelo`
   ADD KEY `id_vuelo` (`id_vuelo`);
 
 --
+-- Indices de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id_usuario`);
+
+--
 -- Indices de la tabla `vuelo`
 --
 ALTER TABLE `vuelo`
@@ -340,6 +337,22 @@ ALTER TABLE `vuelo`
 ALTER TABLE `vuelo_equipo`
   ADD PRIMARY KEY (`id_equipo`,`id_vuelo`),
   ADD KEY `id_vuelo` (`id_vuelo`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `reserva`
+--
+ALTER TABLE `reserva`
+  MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
@@ -367,14 +380,8 @@ ALTER TABLE `pago`
 -- Filtros para la tabla `reserva`
 --
 ALTER TABLE `reserva`
-  ADD CONSTRAINT `reserva_ibfk_1` FOREIGN KEY (`dni`) REFERENCES `cliente` (`dni`);
-
---
--- Filtros para la tabla `reserva_vuelo`
---
-ALTER TABLE `reserva_vuelo`
-  ADD CONSTRAINT `reserva_vuelo_ibfk_1` FOREIGN KEY (`id_reserva`) REFERENCES `reserva` (`id_reserva`),
-  ADD CONSTRAINT `reserva_vuelo_ibfk_2` FOREIGN KEY (`id_vuelo`) REFERENCES `vuelo` (`id_vuelo`);
+  ADD CONSTRAINT `reserva_ibfk_1` FOREIGN KEY (`dni`) REFERENCES `cliente` (`dni`),
+  ADD CONSTRAINT `reserva_ibfk_2` FOREIGN KEY (`id_vuelo`) REFERENCES `vuelo` (`id_vuelo`);
 
 --
 -- Filtros para la tabla `tipo_de_cabina`
