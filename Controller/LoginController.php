@@ -15,12 +15,14 @@ else{
     $respuesta = $UsuarioModels->login($_POST['nom_usuario'], $_POST['pass']);
 
     if ($respuesta == 1){
-        header("location: ../home"); }
-    else {
+    	if(isset($_SESSION['vuelos'])){
+			header("location: ../busqueda");
+    	}else{
+	        header("location: ../home");
+    	}
+    }else {
 
         header("location: ../login");
-    }};
+    }
 
-require_once ("Views/Contenido/login-view.php");
-
-
+}

@@ -5,7 +5,6 @@ session_destroy();
 }
 ?>
 
-
 <?php include_once "Views/Modulos/Navbar1-view.php"; ?>
 
 	 <div class="container py-5">
@@ -38,7 +37,6 @@ session_destroy();
                                     <div id="notlogin"> Usuario o contraeña incorrecta</div>
 	                                <button type="submit" class="btn btn-success btn-lg float-none" id="btnLogin">Ingresar</button>
 	                            </form>
-	                            	<a href="registrar"><div class="float-md-left registrar">No tengo usuario</div><br> </a>
 	                        </div>
 	                    </div>
 	                </div>
