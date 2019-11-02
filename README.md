@@ -10,3 +10,4 @@ Estos son los integrantes del **Grupo 5**
 # Versiones 
 
 - `v1.1` : Es la primer version.
+- `v1.1` : Arreglado la busquedas

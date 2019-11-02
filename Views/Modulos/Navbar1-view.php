@@ -3,7 +3,7 @@
         <div class="col-sm-2" style="display: inline-block;">
             <h1 style="margin:0px;">
                 <span class="largenav">
-                    <a href="./index" class="Ecommerce"> GauchoRocket </a>
+                    <a href="./" class="Ecommerce"> GauchoRocket </a>
                 </span>
             </h1>
         </div>

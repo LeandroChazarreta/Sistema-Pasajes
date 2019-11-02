@@ -1,9 +1,9 @@
 <?php
     session_start();
     if(isset($_SESSION['sesion_usuario'])){
-      include_once "Views/Modulos/Navbar-view.php";       
+      include_once "./Views/Modulos/Navbar-view.php";
     }else{
-      include_once "Views/Modulos/Navbar1-view.php";       
+      include_once "./Views/Modulos/Navbar1-view.php";
     }
     
     include_once "./resources/templates/javascript.html";
