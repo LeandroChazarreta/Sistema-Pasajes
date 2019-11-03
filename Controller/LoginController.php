@@ -16,7 +16,7 @@ else{
 
     if ($respuesta == 1){
     	if(isset($_SESSION['vuelos'])){
-			header("location: ../home");
+			header("location: ../busqueda");
     	}else{
 	        header("location: ../home");
     	}

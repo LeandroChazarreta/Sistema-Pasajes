@@ -14,7 +14,9 @@
         <div class="row">
             <br><br>
             <?php
+              $i = 0;
               foreach ($_SESSION['vuelos'] as $vuelo) {
+              $i = $i + 1;
                 echo "
                   <div class='col-lg-4 col-md-6 mb-4'>
                       <div class='card h-100'>
@@ -28,8 +30,8 @@
                               <p class='card-text'>Fecha de salida: ".$vuelo['fecha_viaje']."</p>
                           </div>
                           <div class='card-footer'>
-                          <a href='./Controller/ReservaVueloController.php?id_vuelo=" . $vuelo["id_vuelo"] ."'>Reservar</a>
-                              Cantidad <select>
+                          <a href='./Controller/ReservaVueloController.php?id_vuelo=" . $vuelo["id_vuelo"] ."' >Reservar</a>
+                              Cantidad <select id='" . $i . "' >
                                       <option value='1'>1</option>
                                       <option value='2'>2</option>
                                       <option value='3'>3</option>
