@@ -1,21 +1,32 @@
 <?php
 	require_once "../Models/conexion.php";
+	require_once("../Models/UsuarioModels.php");
 
 	session_start();
-
 	$conexion = new Conectar();
    	$conexion = $conexion->conexion();
 
-   	$instruccion = "SELECT * FROM vuelo WHERE id_vuelo='" . $_POST['vuelo'] . "';";
-   	$result = mysqli_query($conexion, $instruccion);
-   	$row = mysqli_fetch_assoc($result);
-   	$vuelo = Array();
-   	$vuelo['id_vuelo']	  =	$row["id_vuelo"];
-   	$vuelo['costo_vuelo'] = $row["costo_vuelo"];
-   	$vuelo['duracion']	  = $row["duracion"];
-   	$_SESSION['vuelo']=$vuelo;
+	$mail=$_POST['email'];
+	$registro = new UsuarioModels();
+	$verifico = $registro->verificarMail($mail);
 
-    INSERT INTO reserva 
+	if ($verifico == 0){
+		
+		//echo " Mail no registrado<br>";
+		header("Location: ../reserva2");
 
-	#header("location: ../reserva");
+	}
+	else{
+		$id_vuelo = $_SESSION['vuelo']['id_vuelo'];
+		$servicio=$_POST['servicio'];
+		$cabina=$_POST['cabina'];
+		$id_usuario = $registro->obtenerIdPorMail($mail);
+		$instruccion = "INSERT INTO reserva (fk_usuario,id_vuelo,servicio,cabina) VALUES (" . $id_usuario . "," . $id_vuelo . ",'" . $servicio . "','" . $cabina . "');" ;
+		if($conexion->query($instruccion) === TRUE){
+			echo "Registro guardado";
+		}else{
+			echo "Error :" . $instruccion . "<br>" . $conexion->error;
+		}
+		header("Location: ../reserva");
+	}
 ?>

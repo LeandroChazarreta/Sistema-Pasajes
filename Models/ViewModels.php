@@ -5,7 +5,7 @@
     protected  function obtener_vistas_modelo($vistas) //Palabras que lee la url
     {
         $ListaBlanca = ["indexProducto","productos", "registrar", "login", "index",
-            "home", "admin","busqueda","reserva"];
+            "home", "admin","busqueda","reserva","reserva2"];
 
         if (in_array($vistas, $ListaBlanca)) {
             if (is_file("./Views/Contenido/" . $vistas . "-view.php")) {

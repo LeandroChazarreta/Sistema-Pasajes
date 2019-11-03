@@ -67,6 +67,44 @@ class UsuarioModels
         }
     }
 
+    public function agregarUsuarioPorReserva($nombre, $apellido, $pass, $nom_usuario, $mail){
+        $claveUsuario = md5($pass);			// codifico la contraseña
+        $sql = "Insert Into usuario (nombre, apellido,password, nom_usuario, mail) values 
+					('".$nombre."','".$apellido."','".$claveUsuario."','".$nom_usuario."','".$mail."')";
+
+        $con = new Conectar();
+        $res = mysqli_query($con->conexion(), $sql);
+
+        if ($res == 1){
+
+            return 1;		// si afecto una linea
+        }
+        else{
+
+            return 0;       // si no afecto ninguna linea
+        }
+    }
+
+    public function obtenerId($usuario){
+        $sql = "SELECT * FROM usuario WHERE nom_usuario='".$usuario."';";
+
+        $con = new Conectar();
+        $result = mysqli_query($con->conexion(), $sql); 
+        $row = mysqli_fetch_assoc($result);
+
+        return $row['id_usuario'];
+    }
+
+    public function obtenerIdPorMail($mail){
+        $sql = "SELECT * FROM usuario WHERE mail='".$mail."';";
+
+        $con = new Conectar();
+        $result = mysqli_query($con->conexion(), $sql); 
+        $row = mysqli_fetch_assoc($result);
+
+        return $row['id_usuario'];
+    }
+
     public function verificar($usuario)
     {
         $sql = "select * from usuario where (nom_usuario ='".$usuario."')";
@@ -74,6 +112,14 @@ class UsuarioModels
         $res = mysqli_query($con->conexion(), $sql);
         return mysqli_num_rows($res);
 
+    }
+
+    public function verificarMail($mail)
+    {
+        $sql = "select * from usuario where mail ='".$mail."';";
+        $con = new Conectar();		// verifico el mail
+        $res = mysqli_query($con->conexion(), $sql);
+        return mysqli_num_rows($res);
     }
 
     public function getUsuario (){

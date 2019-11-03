@@ -1,4 +1,6 @@
 <?php
+    
+    //echo '<script language="javascript">alert("Mail no registrado");</script>';
       include_once "Views/Modulos/Navbar-view.php";
       session_start();
       $id_vuelo = $_SESSION['vuelo']['id_vuelo'];
@@ -8,6 +10,7 @@
         
 
 ?>
+<p style="color:red; text-align:center; font-size:24px;" >Mail no registrado</p>
     <div class="row">
         <div class="col-md-12">
             <div class="row">
@@ -18,7 +21,7 @@
                         </div>
 
 
-<form class="formulario" novalidate method="post" data-toggle="validator" action="Controller/GuardarReservaController.php">
+<form class="formulario" novalidate method="post" data-toggle="validator" action="Controller/GuardarReserva2Controller.php">
 
  </div> 
  <div class="row">
@@ -40,12 +43,46 @@
       <label for="fecha">Fecha:</label>
       <input type="date" id="fecha" name="fecha" class="form-control" required="" value="<?php echo $fecha_viaje?>" disabled>
     </div>
-  </div> 
+  </div>
+    
 
-  <div class="row">
-    <div class="col">
+
+    <div class="row">
+      <div class="col">
+           <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" class="form-control" required="" placeholder="Ingrese su nombre">
+      <div class="invalid-tooltip">
+       Ingrese un nombre
+      </div>
+        </div>
+
+
+        <div class="col">
+      <label for="apellido">Apellido:</label>
+      <input type="text" id="apellido" name="apellido" class="form-control" required="" placeholder="Ingrese su apellido">
+      <div class="invalid-tooltip">
+        Ingrese su apellido
+      </div>
+    </div>
+    </div>
+  
+ 
+
+    <div class="row">
+        <div class="col">
       <label for="email">Email</label>
       <input type="text" class="form-control" name='email' id="email" placeholder="Ingrese su email" required>
+    </div> 
+
+    <div class="col">
+      <label for="dni">DNI</label>
+      <input type="text" class="form-control" name='dni' id="dni" placeholder="Ingrese su DNI" required>
+    </div> 
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="usuario">Usuario</label>
+      <input type="text" class="form-control" name='usuario' id="usuario" placeholder="Ingrese su usuario" required>
     </div>
     <div class="col">
       <label for="nro">Cantidad de pasajes</label><br>
@@ -56,10 +93,19 @@
         <option value="4">4</option>
       </select>
       </div>
-  </div>
-
+    </div>
   <div class="row">
     <div class="col">
+      <label for="pass">Contraseña</label>
+      <input type="password" class="form-control" name='pass' id="pass" placeholder="Ingrese contraseña" required>
+    </div>
+    <div class="col">
+      <label for="re_pass">Repita Contraseña</label>
+      <input type="password" class="form-control" name='re_pass' id="re_pass" placeholder="Ingrese nuevamente contraseña" required>
+    </div>
+    </div>
+  <div class="row">
+        <div class="col">
       <label for="nro">Servicio</label><br>
       <select id="servicio" name="servicio">
         <option value="standard">Standard</option>
@@ -75,6 +121,7 @@
         <option value="familiar">Familiar</option>
         <option value="suite">Suite</option>
       </select>
+
       </div>
   </div>
 
