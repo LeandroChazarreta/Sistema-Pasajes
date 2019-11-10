@@ -68,7 +68,6 @@ class BusquedaModels
 
 
         if (mysqli_num_rows($result) > 0) {
-
             // output data of each row
             while($ObtenerViajes = $row = mysqli_fetch_assoc($result)) {
                 $this->vuelos [] = $ObtenerViajes;

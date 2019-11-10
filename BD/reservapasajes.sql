@@ -1,11 +1,6 @@
--- phpMyAdmin SQL Dump
--- version 4.8.5
--- https://www.phpmyadmin.net/
---
--- Servidor: 127.0.0.1
--- Tiempo de generación: 05-11-2019 a las 00:57:18
--- Versión del servidor: 10.1.38-MariaDB
--- Versión de PHP: 7.3.4
+drop database if exists reservapasajes;
+create database reservapasajes;
+use reservapasajes;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -225,7 +220,7 @@ CREATE TABLE `tipo_de_vuelo` (
 
 CREATE TABLE `turno` (
   `id_turno` int(11) NOT NULL,
-  `descripcion` varchar(60) DEFAULT NULL,
+  `fechaturno` date DEFAULT NULL,
   `id_usuario` int(11) DEFAULT NULL,
   `id_centroMedico` int(11) DEFAULT NULL,
   `resultado_chequeo` int(11) DEFAULT NULL
