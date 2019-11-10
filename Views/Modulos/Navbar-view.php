@@ -2,11 +2,11 @@
     <div class="container">
         <div class="row row1">
             <ul class="largenav pull-right">
-                <li class="upper-links"><a class="links">Cuenta</a></li>
+                <li class="upper-links"><a class="links">Cuenta </a></li>
                 <li class="upper-links"><a class="links"> Vuelos</a></li>
-                <li class="upper-links"><a class="links">Historial</a></li>
-                <li class="upper-links"><a class="links">Ofertas</a></li>
-                <li class="upper-links"><a class="links">Ayuda</a></li>
+                <li class="upper-links"><a class="links" href="./medico"> Medico </a></li>
+                <li class="upper-links"><a class="links"> Ofertas </a></li>
+                <li class="upper-links"><a class="links"> Ayuda </a></li>
                 <li class="upper-links">
                     <a class="links" href="#">
                         <svg class="" width="10px" height="8px" style="overflow: visible;">
