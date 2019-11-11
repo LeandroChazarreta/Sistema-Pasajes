@@ -85,13 +85,6 @@
       <input type="text" class="form-control" name='usuario' id="usuario" placeholder="Ingrese su usuario" required>
     </div>
     <div class="col">
-      <label for="nro">Cantidad de pasajes</label><br>
-      <select>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-      </select>
       </div>
     </div>
   <div class="row">

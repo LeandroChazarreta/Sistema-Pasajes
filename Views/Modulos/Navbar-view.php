@@ -1,12 +1,29 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@andrea-nd 
+1
+11LeandroChazarreta/Sistema-Pasajes
+ Code Issues 0 Pull requests 0 Projects 0 Wiki Security Insights
+Sistema-Pasajes/Views/Modulos/Navbar-view.php
+ Leandro Agregado turnos
+54277df yesterday
+41 lines (39 sloc)  2.02 KB
+  
 <div id="flipkart-navbar">
     <div class="container">
         <div class="row row1">
             <ul class="largenav pull-right">
-                <li class="upper-links"><a class="links">Cuenta</a></li>
+                <li class="upper-links"><a class="links">Cuenta </a></li>
                 <li class="upper-links"><a class="links"> Vuelos</a></li>
-                <li class="upper-links"><a class="links">Historial</a></li>
-                <li class="upper-links"><a class="links">Ofertas</a></li>
-                <li class="upper-links"><a class="links">Ayuda</a></li>
+                <li class="upper-links"><a class="links" href="./medico"> Medico </a></li>
+                <li class="upper-links"><a class="links"> Ofertas </a></li>
+                <li class="upper-links"><a class="links"> Ayuda </a></li>
                 <li class="upper-links">
                     <a class="links" href="#">
                         <svg class="" width="10px" height="8px" style="overflow: visible;">
@@ -14,9 +31,7 @@
                         </svg>
                     </a>
                 </li>
-
                 <li class="upper-links"><a class="links" href="./Controller/session_destroy.php">Cerrar sesión</a></li>
-
             </ul>
         </div>
         <div class="row row2">

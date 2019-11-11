@@ -6,6 +6,11 @@
 	$conexion = new Conectar();
    	$conexion = $conexion->conexion();
 
+   	if (!isset($_SESSION['cantidadPasaje'])) {
+   		$_SESSION['cantidadPasaje'] = $_POST['cantidadPasaje'] ;	
+   	}
+   	$_SESSION['cantidadPasaje'] = $_SESSION['cantidadPasaje'] - 1; 
+   	
 	$mail=$_POST['email'];
 	$registro = new UsuarioModels();
 	$verifico = $registro->verificarMail($mail);
@@ -27,6 +32,12 @@
 		}else{
 			echo "Error :" . $instruccion . "<br>" . $conexion->error;
 		}
-		header("Location: ../reserva");
+		if ($_SESSION['cantidadPasaje'] != 0) {
+			header("Location: ../reserva");
+				
+		}else{
+			header("Location: ../index");	
+		}
+		
 	}
 ?>
