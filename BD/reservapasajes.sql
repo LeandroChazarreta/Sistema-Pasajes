@@ -1,13 +1,6 @@
-CREATE DATABASE IF NOT EXISTS reservapasajes;
-USE reservapasajes;
--- phpMyAdmin SQL Dump
--- version 4.9.0.1
--- https://www.phpmyadmin.net/
---
--- Servidor: localhost:3307
--- Tiempo de generación: 01-11-2019 a las 19:26:04
--- Versión del servidor: 10.4.6-MariaDB
--- Versión de PHP: 7.3.8
+drop database if exists reservapasajes;
+create database reservapasajes;
+use reservapasajes;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -34,6 +27,47 @@ CREATE TABLE `administrador` (
   `dni` int(11) DEFAULT NULL,
   `claveAmind` varchar(60) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `centro_medico`
+--
+
+CREATE TABLE `centro_medico` (
+  `id_centroMedico` int(11) NOT NULL,
+  `nombre` varchar(60) DEFAULT NULL,
+  `capacidad_turnos` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `centro_medico`
+--
+
+INSERT INTO `centro_medico` (`id_centroMedico`, `nombre`, `capacidad_turnos`) VALUES
+(1, 'Buenos Aires', 300),
+(2, 'Shanghai', 210),
+(3, 'Ankara', 200);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `chequeo`
+--
+
+CREATE TABLE `chequeo` (
+  `id_chequeo` int(11) NOT NULL,
+  `nivel_vuelo` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `chequeo`
+--
+
+INSERT INTO `chequeo` (`id_chequeo`, `nivel_vuelo`) VALUES
+(1, 1),
+(2, 2),
+(3, 3);
 
 -- --------------------------------------------------------
 
@@ -181,6 +215,20 @@ CREATE TABLE `tipo_de_vuelo` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `turno`
+--
+
+CREATE TABLE `turno` (
+  `id_turno` int(11) NOT NULL,
+  `fechaturno` date DEFAULT NULL,
+  `id_usuario` int(11) DEFAULT NULL,
+  `id_centroMedico` int(11) DEFAULT NULL,
+  `resultado_chequeo` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `usuario`
 --
 
@@ -254,6 +302,18 @@ ALTER TABLE `administrador`
   ADD KEY `dni` (`dni`);
 
 --
+-- Indices de la tabla `centro_medico`
+--
+ALTER TABLE `centro_medico`
+  ADD PRIMARY KEY (`id_centroMedico`);
+
+--
+-- Indices de la tabla `chequeo`
+--
+ALTER TABLE `chequeo`
+  ADD PRIMARY KEY (`id_chequeo`);
+
+--
 -- Indices de la tabla `cliente`
 --
 ALTER TABLE `cliente`
@@ -320,6 +380,15 @@ ALTER TABLE `tipo_de_vuelo`
   ADD KEY `id_vuelo` (`id_vuelo`);
 
 --
+-- Indices de la tabla `turno`
+--
+ALTER TABLE `turno`
+  ADD PRIMARY KEY (`id_turno`),
+  ADD KEY `id_usuario` (`id_usuario`),
+  ADD KEY `id_centroMedico` (`id_centroMedico`),
+  ADD KEY `resultado_chequeo` (`resultado_chequeo`);
+
+--
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
@@ -345,10 +414,28 @@ ALTER TABLE `vuelo_equipo`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `centro_medico`
+--
+ALTER TABLE `centro_medico`
+  MODIFY `id_centroMedico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `chequeo`
+--
+ALTER TABLE `chequeo`
+  MODIFY `id_chequeo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT de la tabla `reserva`
 --
 ALTER TABLE `reserva`
   MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `turno`
+--
+ALTER TABLE `turno`
+  MODIFY `id_turno` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
@@ -402,6 +489,14 @@ ALTER TABLE `tipo_de_servicio`
 --
 ALTER TABLE `tipo_de_vuelo`
   ADD CONSTRAINT `tipo_de_vuelo_ibfk_1` FOREIGN KEY (`id_vuelo`) REFERENCES `vuelo` (`id_vuelo`);
+
+--
+-- Filtros para la tabla `turno`
+--
+ALTER TABLE `turno`
+  ADD CONSTRAINT `turno_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`),
+  ADD CONSTRAINT `turno_ibfk_2` FOREIGN KEY (`id_centroMedico`) REFERENCES `centro_medico` (`id_centroMedico`),
+  ADD CONSTRAINT `turno_ibfk_3` FOREIGN KEY (`resultado_chequeo`) REFERENCES `chequeo` (`id_chequeo`);
 
 --
 -- Filtros para la tabla `vuelo`

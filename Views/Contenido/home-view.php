@@ -9,7 +9,6 @@ echo  "Bienvenido!!!   "."</strong>".$_SESSION['sesion_usuario'];
 
 <div class="container">
   <!-- Contenido -->
-     <? // php include_once "Views/Modulos/Productos-view.php"; ?>
      <form action="./Controller/BusquedaVueloController.php" method="POST">
             <label for="origen">Origen</label>
             <input type="text" name="origen" id="origen" >
