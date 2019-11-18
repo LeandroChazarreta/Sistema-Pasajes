@@ -1,5 +1,6 @@
 <?php
 	require_once "../Models/conexion.php";
+	require_once "../Models/ReservaModels.php";										
 
 	session_start();
 
@@ -17,6 +18,9 @@
     	$vuelo['fecha_viaje'] = $row["fecha_viaje"];
     	$_SESSION['vuelo']=$vuelo;
 
+		$reservaModel = new ReservaModels();
+		$busquedaOrigenes=$reservaModel->obtenerOrigenDestino($_GET['id_vuelo']);
+		$_SESSION['origenes']= $busquedaOrigenes;
 		header("location: ../reserva");
 	}else{
 		header("location: ../login");

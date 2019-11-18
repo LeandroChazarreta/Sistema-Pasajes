@@ -14,7 +14,7 @@ require_once "./Views/Modulos/Navbar-view.php";
 
                     <?php
 
-        foreach ($MostrarTurnos as $linea) {
+        foreach($MostrarTurnos as $linea) {
              echo '
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">

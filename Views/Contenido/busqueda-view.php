@@ -5,12 +5,10 @@
     }else{
       include_once "./Views/Modulos/Navbar1-view.php";
     }
-    
     include_once "./resources/templates/javascript.html";
     ?>
     <!-- Page Content -->
-    <div class="container">
-
+    <div class="container"  style="margin-top:3%" >
         <div class="row">
             <br><br>
             <?php
@@ -29,14 +27,9 @@
                               <p class='card-text'>Duracion: ".$vuelo['duracion']."</p>
                               <p class='card-text'>Fecha de salida: ".$vuelo['fecha_viaje']."</p>
                           </div>
-                          <div class='card-footer'>
+                          <div class='card-footer' align='center'>
                           <a href='./Controller/ReservaVueloController.php?id_vuelo=" . $vuelo["id_vuelo"] ."' >Reservar</a>
-                              Cantidad <select id='" . $i . "' >
-                                      <option value='1'>1</option>
-                                      <option value='2'>2</option>
-                                      <option value='3'>3</option>
-                                      <option value='4'>4</option>
-                                    </select>
+                              
                              </div>
                       </div>
                   </div> ";
