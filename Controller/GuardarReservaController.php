@@ -1,6 +1,7 @@
 <?php
 	require_once "../Models/conexion.php";
 	require_once("../Models/UsuarioModels.php");
+	require_once("../Models/ReservaModels.php");
 
 	session_start();
 	$conexion = new Conectar();
@@ -14,6 +15,7 @@
 	$mail=$_POST['email'];
 	$registro = new UsuarioModels();
 	$verifico = $registro->verificarMail($mail);
+	$reserva = new ReservaModels();
 
 	if ($verifico == 0){
 		
@@ -26,18 +28,15 @@
 		$servicio=$_POST['servicio'];
 		$cabina=$_POST['cabina'];
 		$id_usuario = $registro->obtenerIdPorMail($mail);
-		$instruccion = "INSERT INTO reserva (fk_usuario,id_vuelo,servicio,cabina) VALUES (" . $id_usuario . "," . $id_vuelo . ",'" . $servicio . "','" . $cabina . "');" ;
-		if($conexion->query($instruccion) === TRUE){
+		$origen=$_POST['origen'];
+		$destino=$_POST['destino'];
+		$resultado = $reserva->registrarReserva($id_usuario, $id_vuelo, $servicio, $cabina,$origen,$destino);
+		echo $resultado;
+		/*if($resultado === 1){
 			echo "Registro guardado";
 		}else{
 			echo "Error :" . $instruccion . "<br>" . $conexion->error;
-		}
-		if ($_SESSION['cantidadPasaje'] != 0) {
-			header("Location: ../reserva");
-				
-		}else{
-			header("Location: ../index");	
-		}
-		
+		}*/
+		#header("Location: ../reserva");
 	}
 ?>

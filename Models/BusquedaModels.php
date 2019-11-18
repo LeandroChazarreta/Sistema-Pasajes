@@ -22,21 +22,21 @@ class BusquedaModels
             $destino='';
         }
         if($tipoVuelo != 'entre-destino'){
-            $instruccion = "SELECT * FROM vuelo V JOIN origen O ON V.id_origen=O.id_origen";
+            $instruccion = "SELECT V.id_vuelo, V.fecha_viaje , V.costo_vuelo, V.imagen, V.duracion FROM vuelo V JOIN vuelo_trayecto VT ON V.id_vuelo=VT.fk_vuelo JOIN trayecto T ON VT.fk_trayecto=T.id_trayecto";
         }else{
-            $instruccion = "SELECT * FROM vuelo V JOIN origen O ON V.id_origen=O.id_origen JOIN destino D ON V.id_destino=D.id_destino";
+            $instruccion = "SELECT V.id_vuelo, V.fecha_viaje , V.costo_vuelo, V.imagen, V.duracion FROM vuelo V JOIN vuelo_trayecto VT ON V.id_vuelo=VT.fk_vuelo JOIN trayecto T ON VT.fk_trayecto=T.id_trayecto";
         }
         $condicion = '';
 
         if($origen != ''){
-            $condicion = " WHERE O.nombre_origen ='" . $origen . "'";
+            $condicion = " WHERE T.origen ='" . $origen . "'";
         }
 
         if($destino != ''){
             if($condicion != ''){
-                $condicion = "$condicion AND D.nombre_destino='" . $destino . "'";
+                $condicion = "$condicion AND T.destino='" . $destino . "'";
             }else{
-                $condicion = " WHERE D.nombre_destino ='" . $destino . "'";
+                $condicion = " WHERE T.destino ='" . $destino . "'";
             }
         }
 
@@ -55,9 +55,9 @@ class BusquedaModels
                 $condicion = " WHERE V.tipo_vuelo ='" . $tipoVuelo . "'";
             }
         }
-        $instruccion = $instruccion . $condicion . ";";
+        $instruccion = $instruccion . $condicion . " GROUP BY V.id_vuelo, V.fecha_viaje, V.costo_vuelo, V.imagen, V.duracion;";
 
-
+ 
 
         $conexion = new Conectar();
         $con = $conexion->conexion();
@@ -68,6 +68,7 @@ class BusquedaModels
 
 
         if (mysqli_num_rows($result) > 0) {
+
             // output data of each row
             while($ObtenerViajes = $row = mysqli_fetch_assoc($result)) {
                 $this->vuelos [] = $ObtenerViajes;
