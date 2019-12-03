@@ -2,8 +2,6 @@
 require_once("../Models/conexion.php");
 require_once("../Models/MedicoModels.php");
 
-
-
 $conexion = new Conectar();
 $con = $conexion->conexion();
 
@@ -23,9 +21,11 @@ if ($Verificar == 0) {
     $centro = $fila['id_centroMedico'];
 
     $turno->ReservarTurno($id_usuario, $centro,$fechaturno);
-    header("location: ../medico");
+    require_once ("./Views/Contenido/medico-view.php");
 } else {
-    $MostrarTurnos=$turno->GetTurno();
-    //require_once ("../Views/Contenido/turno-view.php");
-    header("location: ../turno");
-}
+    $MostrarTurnos = $turno->GetTurno();
+
+   //header("location: ../turno");
+    require_once ("../Views/Contenido/turno-view.php");
+
+    }

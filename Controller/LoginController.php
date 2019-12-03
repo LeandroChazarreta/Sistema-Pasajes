@@ -9,7 +9,7 @@ $UsuarioModels = new UsuarioModels();
 
 $respuesta1 = $UsuarioModels->Admin($_POST['nom_usuario'], $_POST['pass']);
 if ($respuesta1 == 1){
-    header("location: ../admin");
+    header("location: ./admin");
 }
 else{
     $respuesta = $UsuarioModels->login($_POST['nom_usuario'], $_POST['pass']);
@@ -21,8 +21,6 @@ else{
 	        header("location: ../home");
     	}
     }else {
-
-        header("location: ../login");
+        header("location: ./login");
     }
-
 }

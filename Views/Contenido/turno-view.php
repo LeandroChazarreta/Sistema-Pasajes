@@ -1,5 +1,5 @@
 <?php
-require_once "./Views/Modulos/Navbar-view.php";
+require_once "../Views/Modulos/Navbar-view.php";
 ?>
 
 <div class="container">
@@ -13,14 +13,13 @@ require_once "./Views/Modulos/Navbar-view.php";
 
 
                     <?php
-
         foreach($MostrarTurnos as $linea) {
              echo '
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">
                         <div class="card-body">
                             <h5> '  .$linea["id_centroMedico"]. '</h5>
-                            <p class="card-text">'  .$linea["fechaTurno"]. '</p>
+                            <p class="card-text">'  .$linea["fechaturno"]. '</p>
                         </div>
                     </div>
                 </div> </a>';

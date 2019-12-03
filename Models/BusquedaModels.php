@@ -1,5 +1,5 @@
 <?php
-require_once ("../Models/conexion.php");
+require_once ("./Models/conexion.php");
 
 
 class BusquedaModels

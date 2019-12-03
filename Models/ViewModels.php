@@ -4,7 +4,7 @@
 
     protected  function obtener_vistas_modelo($vistas) //Palabras que lee la url
     {
-        $ListaBlanca = ["indexProducto","productos", "registrar", "login", "index",
+        $ListaBlanca = ["registrar", "login", "index",
             "home", "admin","busqueda","reserva","reserva2", "medico", "turno"];
 
         if (in_array($vistas, $ListaBlanca)) {

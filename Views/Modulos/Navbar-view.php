@@ -1,7 +1,7 @@
 <div id="flipkart-navbar">
     <div class="container">
-        <div class="col-sm-10" style="display: inline-block; position: absolute;" align="right">
-            <ul style="width: 50%;">
+        <div class="row row1">
+            <ul class="largenav pull-right" align="right">
                 <li class="upper-links"><a class="links">Cuenta</a></li>
                 <li class="upper-links"><a class="links"> Vuelos</a></li>
                 <li class="upper-links"><a class="links" href="./medico"> Medico </a></li>

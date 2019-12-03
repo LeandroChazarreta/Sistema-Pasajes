@@ -279,6 +279,8 @@ INSERT INTO `vuelo` (`id_vuelo`, `duracion`, `fecha_viaje`, `costo_vuelo`, `desc
 (0, '4 hs', '2019-12-14', '3400', 'Entre Destino', 3, 1, 'entre-destino', 'img-entre1.jpg'),
 (1, '10 Dias', '2019-10-31', '5000', 'Vuelo entre destinos', 1, 1, 'entre-destino', 'img-entre.jpg'),
 (2, '35', '2019-11-27', '27000', NULL, NULL, 1, 'tour', 'img-tour.jpg');
+(1, '10 Dias', '2019-11-30', '5000', 'Vuelo entre destinos', 1, 1, 'entre-destino', 'img-entre.jpg'),
+
 
 -- --------------------------------------------------------
 

@@ -1,6 +1,6 @@
 <?php
-    require_once "./Controller/ViewController.php";
+require_once "Controller/ViewController.php";
 
-    $ViewPlantilla = new ViewController();
-    $ViewPlantilla ->obtener_plantilla_controlador();
+$ViewPlantilla = new ViewController();
+$ViewPlantilla ->obtener_plantilla_controlador();
 ?>

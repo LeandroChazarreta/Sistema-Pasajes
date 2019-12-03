@@ -1,15 +1,10 @@
-<?php require_once "./Views/Modulos/Navbar-view.php" ?>
-
-
-<?php
+<?php require_once "./Views/Modulos/Navbar-view.php";
 session_start();
-echo  "Bienvenido!!!   "."</strong>".$_SESSION['sesion_usuario'];
-?>
-<?php require_once "./Views/Modulos/Script-view.php"; ?>
+require_once "./Views/Modulos/Script-view.php"; ?>
 
 <div class="container">
   <!-- Contenido -->
-     <form action="./Controller/BusquedaVueloController.php" method="POST">
+     <form action="./Controller/BusquedaVueloController.php" method="POST" style="padding-bottom: 50px;">
             <label for="origen">Origen</label>
             <input type="text" name="origen" id="origen" >
             <label for="destino">Destino</label> 
@@ -25,6 +20,7 @@ echo  "Bienvenido!!!   "."</strong>".$_SESSION['sesion_usuario'];
             
             <input type="submit" name="consulta-viaje" value="Consultar">
         </form>
+
     </div>
 
 </body>
