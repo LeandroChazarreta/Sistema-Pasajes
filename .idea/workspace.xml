@@ -2,25 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ad6527a-4704-4bbe-9c96-19b4c2685b1a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BD/reservapasajes2.sql" beforeDir="false" afterPath="$PROJECT_DIR$/BD/reservapasajes2.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/MedicoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/MedicoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/ViewController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/ViewController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/BusquedaModels.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/BusquedaModels.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/ViewModels.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/ViewModels.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Contenido/busqueda-view.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Contenido/busqueda-view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Contenido/home-view.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Contenido/home-view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Contenido/turno-view.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Contenido/turno-view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Modulos/Navbar-view.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Modulos/Navbar-view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Modulos/Navbar1-view.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Modulos/Navbar1-view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Modulos/Productos-view.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/css/estilo.css" beforeDir="false" afterPath="$PROJECT_DIR$/Views/css/estilo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/resources/config.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/templates/javascript.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/templates/navbar.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,11 +27,32 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Controller/ViewController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="198">
+                <caret line="9" column="33" lean-forward="true" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Views/Contenido/home-view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+            <state relative-caret-position="484">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="n#style#0;n#form#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -57,26 +61,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Controller/VuelosController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Models/BusquedaModels.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
+            <state relative-caret-position="330">
               <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config.php">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -144,6 +134,7 @@
         <option value="$PROJECT_DIR$/Views/Modulos/Productos-view.php" />
         <option value="$PROJECT_DIR$/Models/BusquedaModels.php" />
         <option value="$PROJECT_DIR$/Views/Contenido/home-view.php" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -247,12 +238,12 @@
       <workItem from="1575172601291" duration="108000" />
       <workItem from="1575241849785" duration="4643000" />
       <workItem from="1575333575648" duration="322000" />
-      <workItem from="1575336341034" duration="2347000" />
+      <workItem from="1575336341034" duration="2621000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9663000" />
+    <option name="totallyTimeSpent" value="9937000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="2" width="1386" height="745" extended-state="0" />
@@ -384,13 +375,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controller/ViewController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -432,13 +416,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controller/VuelosController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/Modulos/Productos-view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -446,23 +423,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controller/VuelosController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/Contenido/home-view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="n#style#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Models/BusquedaModels.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
+        <state relative-caret-position="330">
           <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/Contenido/home-view.php">
+    <entry file="file://$PROJECT_DIR$/Controller/ViewController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-          <folding>
-            <element signature="n#style#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="66">
+          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="198">
+            <caret line="9" column="33" lean-forward="true" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
